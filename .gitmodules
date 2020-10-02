@@ -1,0 +1,10 @@
+[submodule "external/bop_toolkit"]
+	path = external/bop_toolkit
+	url = https://github.com/thodan/bop_toolkit.git
+[submodule "external/bop_renderer"]
+	path = external/bop_renderer
+	url = https://github.com/thodan/bop_renderer.git
+[submodule "external/progressive-x"]
+	path = external/progressive-x
+	url = https://github.com/danini/progressive-x.git
+	branch = version-epos
