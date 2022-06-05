@@ -124,7 +124,7 @@ python create_tfrecord.py --dataset=<dataset> --split=<split> --split_type=<spli
 ```
 
 The TFRecord file is saved in ```$TF_DATA_PATH```.
-A sample TFRecord with YCB-V test images used in the BOP Challenge 2019/2020 can be downloaded from [here](http://ptak.felk.cvut.cz/6DB/public/epos_store/ycbv_test_targets-bop19.tfrecord).
+A sample TFRecord with YCB-V test images used in the BOP Challenge 2019/2020 can be downloaded from [here](https://bop.felk.cvut.cz/media/data/epos_store/ycbv_test_targets-bop19.tfrecord).
 
 
 ### 2.2 Inference with a pre-trained model
@@ -143,9 +143,9 @@ The estimated poses are saved in the [format expected by the BOP Challenge 2019/
 
 ### 2.3 Training your own model
 
-First, create folder ```$TF_MODELS_PATH/<model_name>```, where ```<model_name>``` is a name of the model to be trained. Inside this folder, create file ```params.yml``` specifying parameters of the model. An example model for the YCB-V dataset can be downloaded from [here](http://ptak.felk.cvut.cz/6DB/public/epos_store/ycbv-example-xc65-f64.zip).
+First, create folder ```$TF_MODELS_PATH/<model_name>```, where ```<model_name>``` is a name of the model to be trained. Inside this folder, create file ```params.yml``` specifying parameters of the model. An example model for the YCB-V dataset can be downloaded from [here](https://bop.felk.cvut.cz/media/data/epos_store/ycbv-example-xc65-f64.zip).
 
-Model weights pretrained on ImageNet and COCO datasets, which can be used to initialize training of your models, can be downloaded from here [here](http://ptak.felk.cvut.cz/6DB/public/epos_store/imagenet-coco-xc65.zip) (extract the archive into ```$TF_MODELS_PATH/imagenet-coco-xc65```).
+Model weights pretrained on ImageNet and COCO datasets, which can be used to initialize training of your models, can be downloaded from here [here](https://bop.felk.cvut.cz/media/data/epos_store/imagenet-coco-xc65.zip) (extract the archive into ```$TF_MODELS_PATH/imagenet-coco-xc65```).
 
 Select a GPU and launch the training:
 ```
@@ -170,22 +170,22 @@ The visualizations are saved in folder ```$TF_MODELS_PATH/<model_name>/check_tra
 Models evaluated in the [CVPR 2020 paper](http://openaccess.thecvf.com/content_CVPR_2020/papers/Hodan_EPOS_Estimating_6D_Pose_of_Objects_With_Symmetries_CVPR_2020_paper.pdf) (Xception-65 backbone, trained for 2M iterations):
 
 - 64 fragments per object:
-[LM-O](http://ptak.felk.cvut.cz/6DB/public/epos_store/lmo-cvpr20-xc65-f64.zip),
-[T-LESS](http://ptak.felk.cvut.cz/6DB/public/epos_store/tless-cvpr20-xc65-f64.zip),
-[YCB-V](http://ptak.felk.cvut.cz/6DB/public/epos_store/ycbv-cvpr20-xc65-f64.zip)
+[LM-O](https://bop.felk.cvut.cz/media/data/epos_store/lmo-cvpr20-xc65-f64.zip),
+[T-LESS](https://bop.felk.cvut.cz/media/data/epos_store/tless-cvpr20-xc65-f64.zip),
+[YCB-V](https://bop.felk.cvut.cz/media/data/epos_store/ycbv-cvpr20-xc65-f64.zip)
 - 256 fragments per object:
-[LM-O](http://ptak.felk.cvut.cz/6DB/public/epos_store/lmo-cvpr20-xc65-f256.zip),
-[T-LESS](http://ptak.felk.cvut.cz/6DB/public/epos_store/tless-cvpr20-xc65-f256.zip),
-[YCB-V](http://ptak.felk.cvut.cz/6DB/public/epos_store/ycbv-cvpr20-xc65-f256.zip)
+[LM-O](https://bop.felk.cvut.cz/media/data/epos_store/lmo-cvpr20-xc65-f256.zip),
+[T-LESS](https://bop.felk.cvut.cz/media/data/epos_store/tless-cvpr20-xc65-f256.zip),
+[YCB-V](https://bop.felk.cvut.cz/media/data/epos_store/ycbv-cvpr20-xc65-f256.zip)
 
 
 Models evaluated in the [BOP Challenge 2020](https://bop.felk.cvut.cz/challenges/bop-challenge-2020/) (Xception-65 backbone, trained only on the provided PBR images):
 
 - 64 fragments per object:
-[LM-O](http://ptak.felk.cvut.cz/6DB/public/epos_store/lmo-bop20-xc65-f64.zip),
-[T-LESS](http://ptak.felk.cvut.cz/6DB/public/epos_store/tless-bop20-xc65-f64.zip),
-[TUD-L](http://ptak.felk.cvut.cz/6DB/public/epos_store/tudl-bop20-xc65-f64.zip),
-[IC-BIN](http://ptak.felk.cvut.cz/6DB/public/epos_store/icbin-bop20-xc65-f64.zip),
-[ITODD](http://ptak.felk.cvut.cz/6DB/public/epos_store/itodd-bop20-xc65-f64.zip),
-[HB](http://ptak.felk.cvut.cz/6DB/public/epos_store/hb-bop20-xc65-f64.zip),
-[YCB-V](http://ptak.felk.cvut.cz/6DB/public/epos_store/ycbv-bop20-xc65-f64.zip)
+[LM-O](https://bop.felk.cvut.cz/media/data/epos_store/lmo-bop20-xc65-f64.zip),
+[T-LESS](https://bop.felk.cvut.cz/media/data/epos_store/tless-bop20-xc65-f64.zip),
+[TUD-L](https://bop.felk.cvut.cz/media/data/epos_store/tudl-bop20-xc65-f64.zip),
+[IC-BIN](https://bop.felk.cvut.cz/media/data/epos_store/icbin-bop20-xc65-f64.zip),
+[ITODD](https://bop.felk.cvut.cz/media/data/epos_store/itodd-bop20-xc65-f64.zip),
+[HB](https://bop.felk.cvut.cz/media/data/epos_store/hb-bop20-xc65-f64.zip),
+[YCB-V](https://bop.felk.cvut.cz/media/data/epos_store/ycbv-bop20-xc65-f64.zip)
