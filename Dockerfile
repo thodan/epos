@@ -27,8 +27,6 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
 
 COPY . $REPO_PATH/
 
-RUN ls $REPO_PATH
-
 RUN conda env create --file=$REPO_PATH/environment.yml
 
 RUN mkdir $OSMESA_PREFIX -p &&\
