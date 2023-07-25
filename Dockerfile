@@ -27,7 +27,12 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
 
 COPY . $REPO_PATH/
 
-RUN conda env create --file=$REPO_PATH/environment.yml
+RUN conda install mamba -n base -c conda-forge
+RUN mamba env create --file=$REPO_PATH/environment.yml
+
+RUN cd $REPO_PATH/external/progressive-x/build &&\
+    cmake .. -DCMAKE_BUILD_TYPE=Release &&\
+    make -j$(nproc)
 
 RUN mkdir $OSMESA_PREFIX -p &&\
     mkdir $LLVM_PREFIX -p &&\
@@ -37,9 +42,5 @@ RUN mkdir $OSMESA_PREFIX -p &&\
 
 RUN cd $REPO_PATH/external/bop_renderer &&\
     mkdir build && cd build &&\
-    cmake .. -DCMAKE_BUILD_TYPE=Release &&\
-    make -j$(nproc)
-
-RUN cd $REPO_PATH/external/progressive-x/build &&\
     cmake .. -DCMAKE_BUILD_TYPE=Release &&\
     make -j$(nproc)
