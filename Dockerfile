@@ -29,6 +29,7 @@ COPY . $REPO_PATH/
 
 RUN conda install mamba -n base -c conda-forge
 RUN mamba env create --file=$REPO_PATH/environment.yml
+RUN mamba clean --all -y
 
 RUN cd $REPO_PATH/external/progressive-x/build &&\
     cmake .. -DCMAKE_BUILD_TYPE=Release &&\
