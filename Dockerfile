@@ -39,7 +39,7 @@ LD_LIBRARY_PATH=$REPO_PATH/external/llvm/lib:$LD_LIBRARY_PATH \
 OSMESA_PREFIX=$REPO_PATH/external/osmesa \
 LLVM_PREFIX=$REPO_PATH/external/llvm \
 CMAKE_PREFIX_PATH=/miniconda/envs/epos \
-PYTHON_PREFIX=/miniconda/envs/epos \
+PYTHON_PREFIX=/miniconda/envs/epos
 
 RUN git clone --recurse-submodules https://github.com/thodan/epos.git $REPO_PATH/
 
