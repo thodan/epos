@@ -45,3 +45,6 @@ RUN cd $REPO_PATH/external/bop_renderer && \
     mkdir build && cd build && \
     cmake .. -DCMAKE_BUILD_TYPE=Release && \
     make -j$(nproc)
+
+RUN conda init bash
+RUN echo "conda activate epos" >> ~/.bashrc
