@@ -21,8 +21,8 @@ PYTHON_PREFIX=/miniconda/envs/epos
 
 RUN apt-get update && apt-get install --yes wget build-essential libeigen3-dev curl autoconf cmake automake libtool pkg-config zlib1g-dev
 
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
-    bash Miniconda3-latest-Linux-x86_64.sh -b -p /miniconda && \
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &&\
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /miniconda &&\
     rm Miniconda3-latest-Linux-x86_64.sh
 
 COPY . $REPO_PATH/
@@ -31,17 +31,17 @@ RUN conda install mamba -n base -c conda-forge
 RUN mamba env create --file=$REPO_PATH/environment.yml
 RUN mamba clean --all -y
 
-RUN cd $REPO_PATH/external/progressive-x/build &&\
-    cmake .. -DCMAKE_BUILD_TYPE=Release &&\
+RUN cd $REPO_PATH/external/progressive-x/build && \
+    cmake .. -DCMAKE_BUILD_TYPE=Release && \
     make -j$(nproc)
 
-RUN mkdir $OSMESA_PREFIX -p &&\
-    mkdir $LLVM_PREFIX -p &&\
-    cd $REPO_PATH/external/bop_renderer/osmesa-install &&\
-    mkdir build && cd build &&\
+RUN mkdir $OSMESA_PREFIX -p && \
+    mkdir $LLVM_PREFIX -p && \
+    cd $REPO_PATH/external/bop_renderer/osmesa-install && \
+    mkdir build && cd build && \
     MKJOBS=$(nproc) /bin/bash ../osmesa-install.sh
 
-RUN cd $REPO_PATH/external/bop_renderer &&\
-    mkdir build && cd build &&\
-    cmake .. -DCMAKE_BUILD_TYPE=Release &&\
+RUN cd $REPO_PATH/external/bop_renderer && \
+    mkdir build && cd build && \
+    cmake .. -DCMAKE_BUILD_TYPE=Release && \
     make -j$(nproc)
