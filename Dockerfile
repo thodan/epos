@@ -5,15 +5,12 @@ WORKDIR /app
 ENV PATH="${PATH}:/miniconda/bin" \
 REPO_PATH=/app/epos/repository \
 STORE_PATH=/app/epos/store \
-BOP_PATH=/app/bop/datasets \
-TF_DATA_PATH=$STORE_PATH/tf_data \
+BOP_PATH=/app/bop/datasets
+
+ENV TF_DATA_PATH=$STORE_PATH/tf_data \
 TF_MODELS_PATH=$STORE_PATH/tf_models \
-PYTHONPATH=$REPO_PATH:$PYTHONPATH \
-PYTHONPATH=$REPO_PATH/external/bop_renderer/build:$PYTHONPATH \
-PYTHONPATH=$REPO_PATH/external/bop_toolkit:$PYTHONPATH \
-PYTHONPATH=$REPO_PATH/external/progressive-x/build:$PYTHONPATH \
-PYTHONPATH=$REPO_PATH/external/slim:$PYTHONPATH \
-LD_LIBRARY_PATH=$REPO_PATH/external/llvm/lib:$LD_LIBRARY_PATH \
+PYTHONPATH=$REPO_PATH:$REPO_PATH/external/bop_renderer/build:$REPO_PATH/external/bop_toolkit:$REPO_PATH/external/progressive-x/build:$REPO_PATH/external/slim:${PYTHONPATH} \
+LD_LIBRARY_PATH=$REPO_PATH/external/llvm/lib:${LD_LIBRARY_PATH} \
 OSMESA_PREFIX=$REPO_PATH/external/osmesa \
 LLVM_PREFIX=$REPO_PATH/external/llvm \
 CMAKE_PREFIX_PATH=/miniconda/envs/epos \
