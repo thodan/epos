@@ -16,7 +16,7 @@ LLVM_PREFIX=${REPO_PATH}/external/llvm \
 CMAKE_PREFIX_PATH=/miniconda/envs/epos \
 PYTHON_PREFIX=/miniconda/envs/epos
 
-RUN apt-get update && apt-get install --yes wget build-essential libeigen3-dev curl autoconf cmake automake libtool pkg-config zlib1g-dev
+RUN apt-get update && apt-get install --yes wget build-essential libeigen3-dev curl autoconf cmake automake libtool pkg-config zlib1g-dev zip unzip
 
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &&\
     bash Miniconda3-latest-Linux-x86_64.sh -b -p /miniconda &&\
